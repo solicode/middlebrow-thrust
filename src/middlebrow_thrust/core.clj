@@ -17,8 +17,6 @@
 
 (defrecord ThrustBrowser [process window]
   IBrowser
-  (container [self] :thrust)
-
   (show [self]
     (w/show window))
 
@@ -131,6 +129,11 @@
     (w/listen-blur window
       (fn [e]
         (handler {:event e}))))
+
+  (container-type [self] :fx)
+
+  (start-event-loop [self])
+  (start-event-loop [self error-fn])
 
   IThrustBrowser
   (listen-unresponsive [self handler]
