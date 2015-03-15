@@ -168,9 +168,9 @@
     :undecorated false
     true))
 
-(defn create-window [& {:keys [url x y width height title style process]
+(defn create-window [& {:keys [url x y width height title style process thrust-directory]
                         :as   opts}]
-  (let [process (or process (thrust/create-process))
+  (let [process (or process (thrust/create-process thrust-directory))
         window (w/create-window process
                  :root-url (or url "about:blank")
                  :title (or title "Middlebrow")
