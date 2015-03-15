@@ -130,7 +130,7 @@
       (fn [e]
         (handler {:event e}))))
 
-  (container-type [self] :fx)
+  (container-type [self] :thrust)
 
   (start-event-loop [self])
   (start-event-loop [self error-fn])
